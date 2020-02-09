@@ -4,7 +4,7 @@ admin.initializeApp({ credential: admin.credential.applicationDefault() })
 
 import { Identity, User } from './identity'
 
-const handler = async (args: Identity): Promise<User|null> => {
+const handler = async (args: Identity): Promise<User | null> => {
   const tokenSplit = args.token.split(' ')
   let token = null
 

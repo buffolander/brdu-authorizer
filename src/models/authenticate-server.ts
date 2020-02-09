@@ -3,20 +3,21 @@ import { Identity, ServerClient, AuthTypes, HashFunctions } from './identity'
 const handler = async (args: Identity): Promise<ServerClient|null> => {
   const { 
     token,
-    authParams: { collections }
+    authParams = { collections: [] }, 
   } = args
+  const { 
+    collections = [],
+  } = authParams
 
-  console.log(token)
-  console.log(collections)
-
-  const authParam = collections.filter((c: Array) => c.serverTokenProperty === 'apiKey')
+  const authParam = collections.filter(collection => collection.authType === AuthTypes.StaticToken)
   console.log(authParam)
-
 
   return null
 }
 
 export = handler
+
+/*
 
 const client: Identity = {
   authType: AuthTypes.StaticToken,
@@ -33,8 +34,8 @@ const client: Identity = {
 }
 
 handler(client)
+//
 
-/*
 const crypto = require('crypto')
 const hash = crypto.createHash('sha256')
 

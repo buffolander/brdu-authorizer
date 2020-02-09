@@ -1,7 +1,7 @@
 {
   "name": "@brdu/authorizer",
-  "version": "1.0.9",
-  "description": "Authorization module for Serinus APIs",
+  "version": "0.0.9",
+  "description": "Authentication and Authorization module for Firebase/Express",
   "main": "index.js",
   "scripts": {
     "test": "jest"
