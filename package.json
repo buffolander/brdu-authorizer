@@ -4,7 +4,8 @@
   "description": "Authentication and Authorization module for Firebase/Express",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "tsc"
   },
   "author": "buffolander",
   "license": "ISC",
