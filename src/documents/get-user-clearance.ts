@@ -17,9 +17,9 @@ const handler = async (args: FunctionArgs): Promise<object | null> => {
       uid
     } = args
     const userQueryRes = await db.collection(usersCollection).doc(uid).get()
-    if (!userQueryRes.exists) return Promise.resolve(null)
+    if (!userQueryRes.exists) return null
 
-    const user: FirebaseFirestore.DocumentData = userQueryRes.data()
+    const user: FirebaseFirestore.DocumentData = userQueryRes.data() || {}
     Object.keys(user).forEach((key: any) => {
       if ([rolesProperty, permissionsProperty].indexOf(key) === -1) delete user[key]
     })

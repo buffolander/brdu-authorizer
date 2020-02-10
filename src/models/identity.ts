@@ -43,7 +43,7 @@ interface AuthParams {
 interface Identity { 
   authType: AuthTypes
   token: string
-  authParams?: (AuthParams | null)
+  authParams?: AuthParams
 }
 
 class IdentityService {
@@ -54,11 +54,11 @@ class IdentityService {
     return this.identity.token
   }
 
-  get authParams(): (AuthParams | null | undefined) {
+  get authParams(): (AuthParams | undefined) {
     return this.identity.authParams
   }
 
-  set authParams(authParamsObj: AuthParams | null | undefined) {
+  set authParams(authParamsObj: AuthParams | undefined) {
     this.identity.authParams = authParamsObj
   }
 
