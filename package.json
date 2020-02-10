@@ -6,13 +6,12 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest --config jestconfig.json",
-    "build": "tsc",
-    "publish": "tsc && npm publish --access public"
+    "build": "tsc"
   },
   "author": "buffolander",
   "license": "GPL-3.0",
   "files": [
-    "lib/**/*"
+    "dist/**/*"
   ],
   "devDependencies": {
     "@types/jest": "^25.1.2",
