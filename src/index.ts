@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express'
 
-import { IdentityService, AuthTypes, AuthParams } from './src/models/identity'
+import { IdentityService, AuthTypes, AuthParams } from './models/identity'
 
 interface ExtendedRequest extends Request {
   auth_params: AuthParams
@@ -8,7 +8,7 @@ interface ExtendedRequest extends Request {
 
 const denyAccess = (res: Response): void => { res.status(401).send('access denied') }
 
-const auth = async (req: ExtendedRequest, res: Response, next: NextFunction): Promise<void> => {
+const authorize = async (req: ExtendedRequest, res: Response, next: NextFunction): Promise<void> => {
   const token = (req.headers.authorization || req.headers['x-access-token']) as string
   const authType = req.headers.authorization ? AuthTypes.UserToken : AuthTypes.StaticToken
   const authParams = req.auth_params || null
@@ -23,4 +23,4 @@ const auth = async (req: ExtendedRequest, res: Response, next: NextFunction): Pr
   next()
 }
 
-export { auth, AuthTypes, AuthParams }
+export { authorize, AuthTypes, AuthParams }
