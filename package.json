@@ -1,6 +1,6 @@
 {
   "name": "@brdu/authorizer",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Authentication and Authorization module for Firebase/Express",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
