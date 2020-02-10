@@ -1,12 +1,13 @@
 {
   "name": "@brdu/authorizer",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "Authentication and Authorization module for Firebase/Express",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest --config jestconfig.json",
-    "build": "tsc"
+    "build": "tsc",
+    "publish": "tsc && npm publish"
   },
   "author": "buffolander",
   "license": "GPL-3.0",
