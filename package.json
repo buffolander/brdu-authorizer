@@ -7,7 +7,7 @@
   "scripts": {
     "test": "jest --config jestconfig.json",
     "build": "tsc",
-    "publish": "tsc && npm publish"
+    "publish": "tsc && npm publish --access public"
   },
   "author": "buffolander",
   "license": "GPL-3.0",
