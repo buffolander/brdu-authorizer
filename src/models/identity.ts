@@ -66,7 +66,7 @@ class IdentityService {
     switch (this.identity.authType) {
       case AuthTypes.UserToken:
         const user = await authenticateUser(this.identity)
-        if (!user) return Promise.resolve(null)
+        if (!user) return null
         
         // implement authorization logic
         return Promise.resolve(user)

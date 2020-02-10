@@ -10,7 +10,7 @@ const handler = async (args: Identity): Promise<User | null> => {
 
   if (tokenSplit.length === 1) token = tokenSplit[0]
   else if (tokenSplit[0].toLowerCase() === 'bearer') token = tokenSplit[1]
-  else return Promise.resolve(null) 
+  else return null
   // implement Basic athentication with credentials from Firestore collection
 
   try {
@@ -20,7 +20,7 @@ const handler = async (args: Identity): Promise<User | null> => {
     })
     return decodedToken as User
   } catch (err) {
-    console.error(err)
+    console.info(`access-denied: user-token ${token}`)
   }
   return null
 }
